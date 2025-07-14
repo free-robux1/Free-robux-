@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Robux Generator</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .container {
+      background: rgba(30, 30, 30, 0.95);
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      margin: 100px auto;
+      z-index: 10;
+      position: relative;
+      color: white;
+    }
+
+    input, button {
+      padding: 10px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    input {
+      width: 80%;
+    }
+
+    button {
+      background: #00c569;
+      color: white;
+      cursor: pointer;
+      width: 85%;
+      font-weight: bold;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .offer {
+      background-color: #00c569;
+      color: white;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .offer:hover {
+      background-color: #00a857;
+    }
+
+    .loading {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    .spinner {
+      margin: 15px auto;
+      border: 4px solid #999;
+      border-top: 4px solid #00c569;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .robux-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .robux-coin {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      animation: float 10s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="robux-bg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Robux_2019_Logo.svg" class="robux-coin" style="left: 5%; animation-delay: 0s;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Robux_2019_Logo.svg" class="robux-coin" style="left: 20%; animation-delay: 2s;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Robux_2019_Logo.svg" class="robux-coin" style="left: 40%; animation-delay: 4s;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Robux_2019_Logo.svg" class="robux-coin" style="left: 60%; animation-delay: 1s;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Robux_2019_Logo.svg" class="robux-coin" style="left: 80%; animation-delay: 3s;">
+  </div>
+
+  <div class="container" id="step1">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Roblox_Logo_2022.svg" alt="Roblox Logo" style="width: 120px; margin-bottom: 20px;" />
+    <h2>🎮 Enter your Roblox username</h2>
+    <input type="text" id="username" placeholder="e.g. player123" />
+    <br />
+    <button onclick="goToOffers()">Continue</button>
+  </div>
+
+  <div class="container hidden" id="offers">
+    <h2>💰 Select Robux Amount</h2>
+    <div class="offer" onclick="startVerification()">500 Robux</div>
+    <div class="offer" onclick="startVerification()">1000 Robux</div>
+    <div class="offer" onclick="startVerification()">4000 Robux</div>
+    <div class="offer" onclick="startVerification()">10000 Robux</div>
+  </div>
+
+  <div class="container hidden" id="verifying">
+    <h2>⏳ Sending...</h2>
+    <div class="spinner"></div>
+    <div class="loading">Please wait... verifying you're human</div>
+  </div>
+
+  <script>
+    function goToOffers() {
+      const username = document.getElementById("username").value.trim();
+      if (username === "") {
+        alert("Please enter your Roblox username.");
+        return;
+      }
+      document.getElementById("step1").classList.add("hidden");
+      document.getElementById("offers").classList.remove("hidden");
+    }
+
+    function startVerification() {
+      document.getElementById("offers").classList.add("hidden");
+      document.getElementById("verifying").classList.remove("hidden");
+
+      setTimeout(() => {
+        window.location.href = "https://smrturl.co/6694040";
+      }, 5000);
+    }
+  </script>
+
+</body>
+</html>
